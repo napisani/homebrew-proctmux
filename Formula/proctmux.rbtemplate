@@ -6,10 +6,10 @@ class Proctmux < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/napisani/proctmux/releases/download/TAG_PLACEHOLDER/proctmux-darwin-arm64.tar.gz"
-      sha256 "AMD64_SHA256_PLACEHOLDER"
+      sha256 "ARM64_SHA256_PLACEHOLDER"
     else
       url "https://github.com/napisani/proctmux/releases/download/TAG_PLACEHOLDER/proctmux-darwin-amd64.tar.gz"
-      sha256 "ARM64_SHA256_PLACEHOLDER"
+      sha256 "AMD64_SHA256_PLACEHOLDER"
     end
   end
 
