@@ -25,5 +25,9 @@ echo "AMD64 SHA256:"
 AMD=$(shasum -a 256 proctmux-darwin-amd64.tar.gz | awk '{print $1}')
 echo "$AMD"
 
-cat ../Formula/proctmux.rbtemplate | sed "s/ARM64_SHA256_PLACEHOLDER/$ARM/" | sed "s/AMD64_SHA256_PLACEHOLDER/$AMD/" >../Formula/proctmux.rb
+cat ../Formula/proctmux.rbtemplate |
+	sed "s/ARM64_SHA256_PLACEHOLDER/$ARM/" |
+	sed "s/AMD64_SHA256_PLACEHOLDER/$AMD/" |
+	sed "s/TAG_PLACEHOLDER/$TAG/g" >../Formula/proctmux.rb
+
 rm -rf ./*
