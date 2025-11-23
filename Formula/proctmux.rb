@@ -1,7 +1,7 @@
 class Proctmux < Formula
   desc "tmux-based process manager with interactive TUI"
   homepage "https://github.com/napisani/proctmux"
-  version "0.1.0"
+  version "v0.1.1"
   
   on_macos do
     if Hardware::CPU.arm?
