@@ -1,0 +1,38 @@
+class Proctmux < Formula
+  desc "tmux-based process manager with interactive TUI"
+  homepage "https://github.com/napisani/proctmux"
+  version "0.1.0"
+  
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/napisani/proctmux/releases/download/v0.1.0/proctmux-darwin-arm64.tar.gz"
+      sha256 "REPLACE_WITH_ACTUAL_SHA256"
+    else
+      url "https://github.com/napisani/proctmux/releases/download/v0.1.0/proctmux-darwin-amd64.tar.gz"
+      sha256 "REPLACE_WITH_ACTUAL_SHA256"
+    end
+  end
+
+  depends_on "tmux"
+
+  def install
+    bin.install "proctmux-darwin-arm64" => "proctmux" if Hardware::CPU.arm?
+    bin.install "proctmux-darwin-amd64" => "proctmux" if Hardware::CPU.intel?
+  end
+
+  def caveats
+    <<~EOS
+      proctmux requires tmux to be running.
+      
+      To use proctmux:
+        1. Start a tmux session: tmux
+        2. Run proctmux inside the tmux session
+      
+      See https://github.com/napisani/proctmux for configuration and usage.
+    EOS
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/proctmux --version 2>&1", 1)
+  end
+end
