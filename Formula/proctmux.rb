@@ -1,15 +1,15 @@
 class Proctmux < Formula
   desc "tmux-based process manager with interactive TUI"
   homepage "https://github.com/napisani/proctmux"
-  version "v0.1.5"
+  version "v0.1.6"
   
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/napisani/proctmux/releases/download/v0.1.5/proctmux-darwin-arm64.tar.gz"
-      sha256 "df9947b3a7216ccc91b0da1739aad87279b4c0ee3702d17f3b3dea78fe831e54"
+      url "https://github.com/napisani/proctmux/releases/download/v0.1.6/proctmux-darwin-arm64.tar.gz"
+      sha256 "d7ede3f39cdbbd78adf31b3b36a1882d81023bbfba1a44fba235c7b0d3c96126"
     else
-      url "https://github.com/napisani/proctmux/releases/download/v0.1.5/proctmux-darwin-amd64.tar.gz"
-      sha256 "ab3ef86709d8818f62721c1124c8665ccab0687b2e320bba05bbf62a3d4cbfd1"
+      url "https://github.com/napisani/proctmux/releases/download/v0.1.6/proctmux-darwin-amd64.tar.gz"
+      sha256 "e0284b8a79c351f78c643aa4029c94b0882152b5d5b60923ea70301bdcd99504"
     end
   end
 
